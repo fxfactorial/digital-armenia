@@ -18,26 +18,8 @@ import Credits from './Components/Credits';
 import TopContributors from './Components/TopContributors';
 
 const styles = StyleSheet.create({
-  padLeft: { paddingLeft: padding },
-  padRight: { paddingRight: padding },
   centered_scroll_content: { alignItems: 'center' },
 });
-
-const header_left = navigation => (
-  <TouchableOpacity onPress={() => navigation.navigate('DrawerOpen')}>
-    <View style={[styles.padLeft]}>
-      <Ionicons name={'md-menu'} size={32} />
-    </View>
-  </TouchableOpacity>
-);
-
-const header_right = navigation => (
-  <TouchableOpacity style={[styles.padRight]}>
-    <Ionicons name={'ios-options'} size={32} />
-  </TouchableOpacity>
-);
-
-const DigitalArmeniaBanner = <Text>Digital Armenia</Text>;
 
 class DigitalArmenia extends React.Component {
   async componentDidMount() {
@@ -46,12 +28,6 @@ class DigitalArmenia extends React.Component {
     });
     store.font_loaded = true;
   }
-
-  static navigationOptions = ({ navigation }) => ({
-    headerLeft: header_left(navigation),
-    title: DigitalArmeniaBanner,
-    headerRight: header_right(navigation),
-  });
 
   render() {
     return (
