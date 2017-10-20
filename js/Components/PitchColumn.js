@@ -10,7 +10,7 @@ import { extendObservable } from 'mobx';
 import { observer } from 'mobx-react';
 import { Svg } from 'expo';
 
-import { padding_percent, Row } from '../elems';
+import { padding_percent, Row, StyledText } from '../elems';
 
 const styles = StyleSheet.create({
   centered: { alignItems: 'center' },
@@ -40,7 +40,7 @@ const engage = (
 const TakeAction = observer(() => {
   return (
     <View style={[styles.centered, { backgroundColor: 'orange' }]}>
-      <Text style={styles.banner}> Take Action</Text>
+      <StyledText content={'Take Action'} style={[styles.banner]} />
       <Text>Send a request for online recognition to</Text>
       <Row>
         <Text>Select Category</Text>

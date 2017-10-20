@@ -1,5 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, Dimensions } from 'react-native';
+import { StyleSheet, View, Dimensions, Text } from 'react-native';
+import { observer } from 'mobx-react';
+
+import store from './store';
 
 export const styles = StyleSheet.create({
   row: {
@@ -16,3 +19,11 @@ export const padding_percent = `${padding_amount}%`;
 export const padding = Math.floor(width * padding_amount);
 
 export const Row = ({ children }) => <View style={styles.row}>{children}</View>;
+
+export const StyledText = observer(({ content, style = [], ...rest }) => (
+  <Text
+    style={[...style, { fontFamily: store.font_loaded ? 'poppins' : 'Arial' }]}
+    {...rest}>
+    {content}
+  </Text>
+));
